@@ -15,14 +15,14 @@ router.get(
   "/user",
   authenticateToken,
   authorizationRole(["super admin", "admin"]),
-  UserController.getAllUser
+  UserController.getAllUser,
 );
 
 router.post(
   "/user",
   upload.none(),
   validate(userSchema.createUserSchema),
-  UserController.createUser
+  UserController.createUser,
 );
 
 router.get("/user/:id", UserController.getUserById);

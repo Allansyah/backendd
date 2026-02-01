@@ -28,7 +28,7 @@ const loginUser = async (req, res) => {
       process.env.APP_KEY,
       {
         expiresIn: "1h",
-      }
+      },
     );
 
     res.status(200).json({

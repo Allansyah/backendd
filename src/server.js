@@ -8,15 +8,17 @@ app.use(express.json());
 
 app.use(
   "/assets/images",
-  express.static(path.join(__dirname, "public/images"))
+  express.static(path.join(__dirname, "public/images")),
 );
 
 const conn = require("./routes/conn");
 const userRoute = require("./routes/userRoute");
+const lowonganRoute = require("./routes/lowonganRoute");
 const authRoute = require("./routes/authRoute");
 
 app.use("/", conn);
 app.use("/", userRoute);
+app.use("/", lowonganRoute);
 app.use("/", authRoute);
 
 app.get("/", (_req, res) => {
